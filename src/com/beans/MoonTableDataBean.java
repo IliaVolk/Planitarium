@@ -5,8 +5,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
-import javax.xml.crypto.Data;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by user on 01.01.2016.
@@ -29,14 +28,14 @@ public class MoonTableDataBean {
     }
     public void setRows(String s){}
     ///////////////////////////////
-    public void initializeMoonTableDataBeanModel(PlanetName planetName){
+    public void initializeMoonTableDataBeanModel(PlanetName planetName){/*
         System.out.println("#### инициализация mootTableData начинается planetName="+
                 planetName+"array of moons="+planetarium.getMoons(planetName).toArray());
         System.out.println("#####array of moons="+planetarium.getMoons(planetName).toArray());
         ListDataModel<Planet.MoonData> listDataModel = new ListDataModel<Planet.MoonData>(
                 planetarium.getMoons(planetName));
         System.out.println("#####arrayDataModel="+listDataModel);
-
+*/
         filterModel = new SortFilterModel<Planet.MoonData>(new ListDataModel<Planet.MoonData>(
                 planetarium.getMoons(planetName)));
     }
@@ -45,7 +44,10 @@ public class MoonTableDataBean {
         //planetarium.getMoons(selectedPlanet));
         return filterModel;
     }
-    public void setMoons(DataModel<Planet.MoonData> newMoons){
+    public void setMoons(PlanetName planetName, DataModel<Planet.MoonData> newMoons){
+        ArrayList<Planet.MoonData> list = new ArrayList<>(newMoons.getRowCount());
+        newMoons.forEach(list::add);
+        planetarium.setMoons(planetName, list);
         filterModel = new SortFilterModel<>(newMoons);
     }
     public void deleteRow(PlanetName selectedPlanet, Object name){
@@ -61,10 +63,10 @@ public class MoonTableDataBean {
     public String sortByName(){
 
         filterModel.sortBy((o1, o2) -> {
-            System.out.println("*SORTING* by name o1.compareTo(o2)="+
+            /*System.out.println("*SORTING* by name o1.compareTo(o2)="+
                     o1.getName().compareTo(o2.getName())+" o1.compareTo(o2){{in lower case}}="  +
                             (o1.getName().toLowerCase()).compareTo(o2.getName().toLowerCase())+
-                    "  o1="+o1.getName()+" o2="+o2.getName());
+                    "  o1="+o1.getName()+" o2="+o2.getName());*/
             return (o1.getName().toLowerCase()).compareTo(o2.getName().toLowerCase());
         });
         return null;

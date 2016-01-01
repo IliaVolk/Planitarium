@@ -77,7 +77,7 @@ public class UserBean implements Serializable{
         return moonTableData.getMoons();
     }
     public void setMoons(DataModel<Planet.MoonData> newMoons){
-        moonTableData.setMoons(newMoons);
+        moonTableData.setMoons(selectedPlanet(), newMoons);
     }
     public String deleteRow(Object name){
         moonTableData.deleteRow(selectedPlanet(), name);
