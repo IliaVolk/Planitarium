@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head></h:head>
+    <h:body>
+        <ui:composition>
+            <h:panelGroup>
+                <div class='#{name == user.selectedPlanet ?
+                          "planetSelected" : "planet"}'>
+                    <h:commandLink styleClass="width100Percent" action="#{user.changePlanet(name)}">
+                        <h:graphicImage styleClass="planetImage" library="images" name="#{image}"/>
+                        <span><h:outputText value="#{prompt}"/></span>
+                    </h:commandLink>
+
+                    <ui:remove>
+                        <ui:fragment rendered="#{name == user.selectedPlanet}">
+                            <span>Fragment</span>
+                        </ui:fragment>
+                    </ui:remove>
+
+                </div>
+            </h:panelGroup>
+        </ui:composition>
+    </h:body>
+</f:view>
+</html>

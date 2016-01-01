@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <ui:composition>
+        <h:outputStylesheet library="css" name="moonTable.css" />
+        <h:form>
+            <h:dataTable columnClasses="oddColumns, evenColumns, oddColumns, evenColumns"
+                         headerClass="tableHeader" rowClasses="oddRows, evenRows"
+                         value="#{user.moons}" styleClass="table" var="moon">
+                <f:facet name="caption">
+                    <h:outputFormat value="#{messages.moonTableCaption}">
+                        <f:param value="#{thisPlanetName}"/>
+                    </h:outputFormat>
+                </f:facet>
+                <h:column >
+                    <f:facet name="header">
+                        Edit
+                    </f:facet>
+                    <h:selectBooleanCheckbox onclick="submit()" value="#{moon.editable}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="#{messages.moon}" action="#{moonTableData.sortByName}"/>
+                    </f:facet>
+                    <h:outputText value="#{moon.name}" rendered="#{not moon.editable}"/>
+                    <h:inputText onblur="submit()" value="#{moon.name}" rendered="#{moon.editable}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:commandLink value="#{messages.diameter}" action="#{moonTableData.sortByDiameter}"/>
+                    </f:facet>
+                    <h:outputText value="#{moon.diameter}" rendered="#{not moon.editable}"/>
+                    <h:inputText onblur="submit()" value="#{moon.diameter}" rendered="#{moon.editable}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        #{messages.delete}
+                    </f:facet>
+                    <h:commandButton action="#{user.deleteRow(moon)}" value="#{messages.delete}"/>
+                </h:column>
+            </h:dataTable>
+
+            <h:commandButton value="Add Row" action="#{user.addRow()}"/>
+            <!--Отладка сортировки - вывод номеров столбцов-->
+            <ui:remove>
+                <h:commandButton  value="Submit"/>
+                <h:outputText value="Rows: #{moonTableData.rows}"/>
+            </ui:remove>
+
+        </h:form>
+    </ui:composition>
+</f:view>
+</html>

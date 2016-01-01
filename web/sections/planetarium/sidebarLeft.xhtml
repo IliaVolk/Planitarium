@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:corejsf="http://corejsf.com/facelets">
+<f:view>
+    <ui:composition>
+        <div class="content">
+            <h:form>
+                <h:panelGrid styleClass="width100Percent" rowClasses="width100Percent" columns="1">
+
+                    <h:outputText value="#{messages.hello}, #{user.name}"/>
+
+                    <h:commandLink value="#{messages.loginTitle}" action="login"/>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.mercury}"/>
+                        <ui:param name="image" value="mercury.jpg"/>
+                        <ui:param name="prompt" value="#{messages.mercury}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.venus}"/>
+                        <ui:param name="image" value="venus.jpg"/>
+                        <ui:param name="prompt" value="#{messages.venus}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.earth}"/>
+                        <ui:param name="image" value="earth.jpg"/>
+                        <ui:param name="prompt" value="#{messages.earth}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.mars}"/>
+                        <ui:param name="image" value="mars.jpg"/>
+                        <ui:param name="prompt" value="#{messages.mars}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.jupiter}"/>
+                        <ui:param name="image" value="jupiter.jpg"/>
+                        <ui:param name="prompt" value="#{messages.jupiter}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.saturn}"/>
+                        <ui:param name="image" value="saturn.jpg"/>
+                        <ui:param name="prompt" value="#{messages.saturn}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.uranus}"/>
+                        <ui:param name="image" value="uranus.jpg"/>
+                        <ui:param name="prompt" value="#{messages.uranus}"/>
+                    </ui:include>
+                    <ui:include src="/sections/planetarium/planet.xhtml">
+                        <ui:param name="name" value="#{planetNamesBean.neptune}"/>
+                        <ui:param name="image" value="neptune.jpg"/>
+                        <ui:param name="prompt" value="#{messages.neptune}"/>
+                    </ui:include>
+
+                </h:panelGrid>
+            </h:form>
+        </div>
+    </ui:composition>
+</f:view>
+</html>

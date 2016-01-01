@@ -1,0 +1,59 @@
+body, input{
+    font-family: "Arial", sans-serif;
+    font-size: 14pt;
+}
+#sidebarLeft{
+    width: 20%;
+    float: left;
+    background-color: lightblue;
+}
+#content {
+    float: left;
+}
+
+img {
+    width: 100%;
+}
+#heading {
+    
+    font-size: 20pt;
+    text-align: center;
+    min-height: 100px;
+    background-color: black;
+    color:white;
+    font-family: sans-serif;
+}
+.header {
+    padding: 1px;
+}
+#content, #heading, #sidebarLeft{
+    padding:20px;
+}
+#content {
+    padding: 30px;
+}
+.planetSelected{
+    background-color: black;
+}
+.planetSelected span {
+    color:white!important;
+}
+.planet {
+    //background-color: white;
+}
+.planet span {
+    color:black!important;
+}
+.width100Percent{
+    text-decoration: none;
+    width:100%;
+}
+.planet span, .planetSelected span{
+    text-decoration: none!important;
+    font-size: larger;
+}
+.planetImage {
+    height: 30px!important;
+    width: auto;!important;
+    font-family: sans-serif;
+}

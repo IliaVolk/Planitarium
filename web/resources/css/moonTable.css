@@ -1,0 +1,25 @@
+.table{
+    background-color: lightcyan;
+    border-collapse: collapse;
+
+}
+.tableHeader, .oddColumns, .evenColumns{
+    border: 1px solid darkcyan;
+
+    padding: 5px;
+}
+.rows{
+
+}
+.oddColumns{
+   // background-color: cadetblue;
+}
+.evenColumns{
+    //background-color: darkgrey;
+}
+.oddRows{
+    background-color: cadetblue;
+}
+.evenRows{
+    background-color: darkgrey;
+}
