@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+
+    <ui:composition>
+        <h:form>
+        <h:panelGrid columns="4">
+            <h:outputLabel for="amount" value="#{messages.amount}"/>
+            <h:inputText id="amount" value="#{payment.amount}" required="true"
+                    requiredMessage="#{messages.requiredMessage}">
+                <f:convertNumber minFractionDigits="2"/>
+                <f:validateDoubleRange minimum="10" maximum="10000"/>
+            </h:inputText>
+            <h:message for="amount" styleClass="error" showDetail="false" showSummary="true"/>
+            <h:outputText value="#{payment.amount}">
+                <f:convertNumber type="currency"/>
+            </h:outputText>
+
+
+            <h:outputLabel for="credit_card" value="#{messages.creditCard}"/>
+            <h:inputText id="credit_card" value="#{payment.creditCard}" required="true"
+                    requiredMessage="#{messages.requiredMessage}">
+                <f:validateLength minimum="13"/>
+                <f:validator validatorId="com.beans.services.payment.CreditCardValidator"/>
+            </h:inputText>
+            <h:message for="credit_card" styleClass="error" showDetail="true" showSummary="false"/>
+            <h:outputText value="#{payment.creditCard}">
+                
+            </h:outputText>
+
+
+            <h:outputLabel for="expiration_date" value="#{messages.expirationDate}"/>
+            <h:inputText id="expiration_date" value="#{payment.expirationDate}" required="true"
+                         requiredMessage="#{messages.requiredMessage}">
+                <f:convertDateTime pattern="MM/yyyy"/>
+            </h:inputText>
+            <h:message for="expiration_date" styleClass="error" showDetail="true" showSummary="false"/>
+            <h:outputText value="#{payment.expirationDate}">
+                <f:converter converterId="javax.faces.DateTime"/>
+            </h:outputText>
+        </h:panelGrid>
+            <h:commandButton value="#{messages.process}"/>
+        </h:form>
+    </ui:composition>
+</f:view>
+</html>

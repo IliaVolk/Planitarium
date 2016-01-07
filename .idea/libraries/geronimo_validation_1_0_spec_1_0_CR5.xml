@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="geronimo-validation_1.0_spec-1.0-CR5">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" />
+    </SOURCES>
+    <jarDirectory url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" recursive="false" />
+    <jarDirectory url="jar://$PROJECT_DIR$/lib/geronimo-validation_1.0_spec-1.0-CR5.jar!/" recursive="false" type="SOURCES" />
+  </library>
+</component>

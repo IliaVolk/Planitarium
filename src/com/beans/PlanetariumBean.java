@@ -20,6 +20,7 @@ public class PlanetariumBean implements Serializable{
     public PlanetariumBean(){
         //TODO: add more planets in map
         planets.put(PlanetName.saturn, new Saturn());
+        planets.put(PlanetName.mars, new Mars());
     }
     /*public List<Planet.MoonData> getMoons(PlanetName planetName){
         return planets.get(planetName).getMoons();

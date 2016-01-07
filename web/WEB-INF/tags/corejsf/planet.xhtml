@@ -8,14 +8,22 @@
 <f:view>
     <h:body>
         <ui:composition>
-            <div class='#{name == planetarium.selectedPlanet ?
-                          "planetImageSelected" : "planetImage"}'>
-                <h:commandLink action="#{planetarium.changePlanet(name)}">
-                    <h:graphicImage library="images" name="#{image}"/>
-                </h:commandLink>
-                <ui:insert name="content1"/>
-            </div>
-            <h:outputText value="prompt"/>
+            <h:panelGroup>
+                <div class='#{name == user.selectedPlanet ?
+                          "planetSelected" : "planet"}'>
+                    <h:commandLink styleClass="width100Percent" action="#{user.changePlanet(name)}">
+                        <h:graphicImage styleClass="planetImage" library="images" name="#{image}"/>
+                        <span><h:outputText value="#{prompt}"/></span>
+                    </h:commandLink>
+
+                    <ui:remove>
+                        <ui:fragment rendered="#{name == user.selectedPlanet}">
+                            <span>Fragment</span>
+                        </ui:fragment>
+                    </ui:remove>
+
+                </div>
+            </h:panelGroup>
         </ui:composition>
     </h:body>
 </f:view>

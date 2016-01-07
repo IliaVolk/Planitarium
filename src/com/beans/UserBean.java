@@ -5,7 +5,6 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * Created by user on 29.12.2015.

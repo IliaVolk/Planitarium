@@ -31,6 +31,7 @@ img {
 }
 #content {
     padding: 30px;
+    width: 70%;
 }
 .planetSelected{
     background-color: black;
@@ -56,4 +57,9 @@ img {
     height: 30px!important;
     width: auto;!important;
     font-family: sans-serif;
+}
+
+.error{
+    font-style: italic;
+    color:red;
 }

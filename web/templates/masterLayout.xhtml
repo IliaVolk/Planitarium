@@ -5,7 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
+<f:view locale="#{localeChanger.locale}">
     <h:head>
         <title><ui:insert name="windowTitle"/></title>
         <h:outputStylesheet library="css" name="basic.css"/>
@@ -17,6 +17,7 @@
                 <ui:include src="/sections/planetarium/header.xhtml"/>
             </ui:insert>
         </div>
+
         <div id="sidebarLeft">
             <ui:insert name="slidebarLeft">
                 <ui:include src="/sections/planetarium/sidebarLeft.xhtml"/>
@@ -24,7 +25,7 @@
         </div>
         <div id="content">
             <ui:insert name="content">
-                <ui:include src="/sections/planetarium/moonsTable.xhtml"/>
+
             </ui:insert>
         </div>
         <div style=" clear:both"></div>
