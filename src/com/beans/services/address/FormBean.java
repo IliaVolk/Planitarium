@@ -17,18 +17,11 @@ import java.util.*;
  * Created by user on 04.01.2016.
  */
 @ManagedBean(name = "form")
-@SessionScoped
+@RequestScoped
 public class FormBean implements Serializable{
     @ManagedProperty(value = "#{localeChanger}")
     LocaleChangerBean localeChanger;
-    /////////////////////debug
-    @ManagedProperty(value = "#{user}")
-    UserBean user;
 
-    public void setUser(UserBean user) {
-        this.user = user;
-    }
-    ///////////////////////
     public void setLocaleChanger(LocaleChangerBean localeChanger) {
         this.localeChanger = localeChanger;
     }
@@ -47,7 +40,6 @@ public class FormBean implements Serializable{
     }
 
     public void setCountry(String country) {
-        user.setName(country);
         System.out.println("*******username " + country);
         this.country = country;
     }
@@ -74,7 +66,6 @@ public class FormBean implements Serializable{
                 break;
             }
         }
-        /*debug*/user.setName(builder.toString());
         /*debug*/System.out.println("***********"+builder.toString());
     }
 }

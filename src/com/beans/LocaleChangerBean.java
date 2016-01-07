@@ -12,13 +12,16 @@ import java.util.Locale;
 @ManagedBean(name = "localeChanger")
 @SessionScoped
 public class LocaleChangerBean {
+    private Locale locale;
     public void setLocale(Locale locale){
+        this.locale = locale;
         FacesContext.getCurrentInstance().getViewRoot().
                 setLocale(locale);
     }
     public Locale getLocale(){
-        Locale locale = FacesContext.getCurrentInstance().getViewRoot().getLocale();
-        setLocale(locale);
-        return locale;
+        if (locale != null) {
+            setLocale(locale);
+            return locale;
+        }else return FacesContext.getCurrentInstance().getViewRoot().getLocale();
     }
 }

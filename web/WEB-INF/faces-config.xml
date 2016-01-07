@@ -13,8 +13,6 @@
         <locale-config>
             <default-locale>en</default-locale>
             <supported-locale>ua</supported-locale>
-            <supported-locale>ru</supported-locale>
-            <supported-locale>us</supported-locale>
-        </locale-config>
+                    </locale-config>
     </application>
 </faces-config>
